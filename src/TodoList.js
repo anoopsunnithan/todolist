@@ -12,6 +12,7 @@ class ToDoList extends Component {
         }
 
         this.addTodoItem = this.addTodoItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
     addTodoItem(event) {
@@ -29,22 +30,36 @@ class ToDoList extends Component {
         }
 
         this._inputElement.value="";
-        console.log(this.state.items)
         event.preventDefault();
         
+    }
+
+    deleteItem(key) {
+        var filteredItems = this.state.items.filter( function(item) {
+            return(item.key !==key)
+        });
+
+        this.setState({
+            items:filteredItems
+        });
+
+
     }
 
     render(){
         return(
             <div className="todoListMain">
                 <div className="header">
+                    <h3 className="headingClass">Todo List</h3>
                     <form onSubmit={this.addTodoItem}>
                         <input ref={(a) => this._inputElement = a} 
                                 placeholder="Enter Task" />
                         <button type="submit" >Add</button>
                     </form>
                 </div>
-                <TodoItem entries={this.state.items} />
+                <TodoItem entries={this.state.items} 
+                            delete={this.deleteItem}
+                />
             </div>
         );
     }

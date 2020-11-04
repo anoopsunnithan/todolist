@@ -4,7 +4,7 @@ class TodoItem extends Component {
     constructor(props) {
         super(props);
 
-        this.createTasks = this.createTasks.bind(this);
+        this.createtasks = this.createtasks.bind(this);
     }
 
     createtasks(item) {

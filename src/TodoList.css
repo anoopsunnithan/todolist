@@ -16,20 +16,30 @@
 }
 
 .todoListMain .header button:hover {
-    background-color: wheat;
+    background-color: rgb(231, 156, 16);
     border: 2px solid wheat;
     cursor: pointer;
 }
 
 .todoListMain .theList li {
-    color: rgb(219, 211, 226);
-    background-color: rgb(100, 85, 85);
+    color: rgb(255, 255, 255);
+    background-color: rgb(13, 27, 41);
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border:2px solid whitesmoke;
+    border-radius: 10px;
     list-style: none;
+
+
 }
 
 ul.theList {
     padding: 0px;
+
 }
+
+h3.headingClass {
+    text-align: center;
+    color: rgb(172, 165, 165);
+}
+
